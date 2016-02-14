@@ -36,5 +36,3 @@ set ignorecase 	" Ignore case while searching
 
 set mouse=a " Enable mouse
 
-inoremap jk <esc>		" Remap escape to jk
-inoremap <esc> <nop>	" Pressing escape does no operation 
