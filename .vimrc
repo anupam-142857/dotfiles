@@ -5,7 +5,7 @@ set cursorline 	" highlight current line
 
 set wildmenu 	" visual autocomplete for command menu
 
-colorscheme molokai	"theme setup
+colorscheme monokai	"theme setup
 syntax on
 
 set tabstop=2 	" number of visual spaces per tab
