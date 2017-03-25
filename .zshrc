@@ -5,7 +5,22 @@ export ZSH=/Users/Anupam/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+
+powerline-daemon -q
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+export TERM="xterm-256color"
+POWERLEVEL9K_MODE='awesome-patched'
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs time)
+#POWERLEVEL9K_RAM_ELEMENTS=ram_free
+POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -27,7 +42,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -53,7 +68,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.3/bin:/Users/Anupam/pig-0.14/bin:/Users/Anupam/jython2.5.0:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/bin/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias 'll=ls -l'
+alias 'll=ls -lh'
 alias 'c=clear'
 alias 'x=exit'
 alias '..=cd ..'
@@ -105,6 +120,8 @@ alias 'gp=git pull'
 alias 'gco=git checkout'
 alias 'ga=git add'
 alias 'gc=git commit'
+alias 'gd=git diff'
+alias 'gpu=git push'
 
 # Fix numeric keypad
 # 0 . Enter
