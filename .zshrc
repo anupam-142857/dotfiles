@@ -8,7 +8,20 @@ export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
 export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH
 
 export SPARK_HOME="/usr/lib/spark"
-export PYSPARK_SUBMIT_ARGS='--master yarn --deploy-mode client --driver-memory 16g --num-executors 6 --executor-memory 8g --executor-cores 4 --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.default.parallelism=300 --conf spark.driver.maxResultSize=2g --conf spark.shuffle.spill=true --conf spark.sql.shuffle.partitions=100 --conf spark.yarn.executor.memoryOverhead=1536 --driver-java-options -Dlog4j.configuration=file:///usr/lib/spark/conf/log4j.properties pyspark-shell'
+export PYSPARK_SUBMIT_ARGS='--master yarn
+--deploy-mode client
+--driver-memory 56g
+--executor-memory 18g
+--executor-cores 5
+--conf spark.driver.cores=5
+--conf spark.serializer=org.apache.spark.serializer.KryoSerializer
+--conf spark.default.parallelism=120
+--conf spark.driver.maxResultSize=2g
+--conf spark.shuffle.spill=true
+--conf spark.sql.shuffle.partitions=100
+--conf spark.yarn.driver.memoryOverhead=7168
+--conf spark.yarn.executor.memoryOverhead=3072
+--driver-java-options -Dlog4j.configuration=file:///usr/lib/spark/conf/log4j.properties pyspark-shell'
 
 powerline-daemon -q
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
