@@ -8,22 +8,21 @@ export EDITOR=vim
 export VISUAL=vim
 
 export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
-export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH
+export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.6-src.zip:$PYTHONPATH
 
 export SPARK_HOME="/usr/lib/spark"
 export PYSPARK_SUBMIT_ARGS='--master yarn
 --deploy-mode client
---driver-memory 56g
---executor-memory 18g
---executor-cores 5
---conf spark.driver.cores=5
+--driver-memory 13g
+--executor-memory 4g
+--executor-cores 1
+--conf spark.driver.cores=3
 --conf spark.serializer=org.apache.spark.serializer.KryoSerializer
---conf spark.default.parallelism=120
+--conf spark.default.parallelism=6
 --conf spark.driver.maxResultSize=2g
 --conf spark.shuffle.spill=true
---conf spark.sql.shuffle.partitions=100
---conf spark.yarn.driver.memoryOverhead=7168
---conf spark.yarn.executor.memoryOverhead=3072
+--conf spark.yarn.driver.memoryOverhead=2048
+--conf spark.yarn.executor.memoryOverhead=1024
 --driver-java-options -Dlog4j.configuration=file:///usr/lib/spark/conf/log4j.properties pyspark-shell'
 
 powerline-daemon -q
